@@ -3,11 +3,11 @@
 import {path as rootPath} from 'app-root-path';
 
 // Built-in Node modules
-import * as http from 'http';
-import * as path from 'path';
+import http from 'http';
+import path from 'path';
 
 // Express - server hosting
-import * as express from 'express';
+import express from 'express';
 
 /******************************************** LOGGING *********************************************/
 import {logFactory, Styles} from 'mad-logs/lib/shared';

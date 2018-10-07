@@ -1,8 +1,7 @@
 /************************************** THIRD-PARTY MODULES ***************************************/
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-
-const cn = require('classnames');
+import * as cn from 'classnames';
 
 /************************************** INTERACTION WITH DOM **************************************/
 /**
