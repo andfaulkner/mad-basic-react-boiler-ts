@@ -38,6 +38,8 @@
     "include": [
         "./app/**/*.ts",
         "./app/**/*.tsx",
+        "./script/*.ts",
+        "./script/**/*.ts",
         "./config/**/*.ts",
         "./config/*.ts",
         "./typings/index.d.ts",
