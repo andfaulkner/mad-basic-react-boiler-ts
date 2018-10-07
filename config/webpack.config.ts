@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import {path as rootPath} from 'app-root-path';
+import {isProduction} from 'env-var-helpers';
 
 // const path = require('path');
 
@@ -13,6 +14,8 @@ const config: webpack.Configuration = {
         path: path.join(rootPath, `/build/client`),
         filename: `index.js`,
     },
+
+    mode: (isProduction ? `production` : `development`) as webpack.Configuration['mode'],
 
     resolve: {
         extensions: [`.ts`, `.tsx`, `.js`, `.jsx`],

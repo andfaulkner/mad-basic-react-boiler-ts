@@ -43,6 +43,8 @@ const app = express()
     // Serve
     .listen(port, logServerStartSuccess);
 
+log.verbose(app);
+
 /**
  * Runs on server start
  */
