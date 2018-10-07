@@ -8,6 +8,7 @@ charset = utf-8
 tab_width = 1
 end_of_line = lf
 trim_trailing_whitespace = true
+insert_final_newline = true
 # lf: OSX & Unix line end
 
 [*.{md,txt,pem,}]
