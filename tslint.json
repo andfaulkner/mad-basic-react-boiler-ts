@@ -1,5 +1,5 @@
 {
-    "extends": ["tslint:latest"],
+    "extends": ["tslint:recommended"],
 
     "rulesDirectory": [
         "node_modules/tslint-eslint-rules/dist/rules",
@@ -10,6 +10,13 @@
     "rules": {
         "array-type": [true, "array-simple"],
         "arrow-parens": false,
+        "ban-types": [
+            true,
+            ["String", "Avoid using the `String` type. Use `string` instead"],
+            ["Boolean", "Avoid using the `Boolean` type. Use `boolean` instead"],
+            ["Number", "Avoid using the `Number` type. Use `number` instead"],
+            ["Symbol", "Avoid using the `Symbol` type. Use `symbol` instead"]
+        ],
         "block-spacing": [true, "always"],
         "brace-style": [true, "1tbs", { "allowSingleLine": true }],
         "chai-prefer-contains-to-index-of": true,
@@ -22,11 +29,14 @@
         "import-blacklist": [true, "react-toolbox"],
         "indent": [true, "spaces"],
         "interface-name": [true, "never-prefix"],
+        "jsdoc-format": false,
         "label-position": true,
         "max-file-line-count": [true, 400],
         "max-line-length": [true, 100],
         "max-classes-per-file": [true, 5],
+        // Requires explicit visibility declarations for class members
         "member-access": false,
+        "member-ordering": false,
         "new-parens": true,
         "no-angle-bracket-type-assertion": true,
         "no-arg": true,
@@ -37,7 +47,6 @@
         "no-constant-condition": true,
         "no-construct": true,
         "no-control-regex": true,
-        "no-constant-condition": true,
         "no-default-export": true,
         "no-duplicate-case": true,
         "no-duplicate-imports": true,
@@ -45,7 +54,8 @@
         "no-empty": true,
         "no-empty-character-class": true,
         "no-empty-line-after-opening-brace": true,
-        "no-empty-interfaces": false,
+        // Forbids empty interfaces
+        "no-empty-interface": false,
         "no-eval": true,
         "no-ex-assign": true,
         "no-extra-semi": true,
@@ -56,35 +66,53 @@
         "no-internal-module": false,
         "no-invalid-this": false,
         "no-invalid-regexp": true,
-        "no-magic-numbers": [true, -2, -1, 0, 1, 2, 10],
+        "no-magic-numbers": [
+            true,
+            -2, -1, 0, 1, 2, 3, 4,
+            10, 100, 1000,
+            -10, -100, -1000,
+            45, 90, 135, 180, 225, 270, 315, 360, // angles
+            80, 8080 // ports
+        ],
         "no-mergeable-namespace": false,
         "no-octal-literal": true,
         "no-param-reassign": true,
         "no-reference": false,
         "no-regex-spaces": true,
-        "no-shadowed-variable": true,
+        "no-shadowed-variable": [
+            true,
+            {
+                "class": true,
+                "enum": true,
+                "function": false,
+                "interface": false,
+                "namespace": true,
+                "typeAlias": false,
+                "typeParameter": false
+            }
+        ],
         "no-sparse-arrays": true,
-        "no-stateless-class": true,
         "no-string-based-set-interval": true,
         "no-string-based-set-immediate": true,
         "no-string-based-set-timeout": true,
         "no-string-literal": false,
-        "no-submodule-imports": [true, "mad-utils", "mad-logs"],
+        "no-submodule-imports": false,
         "no-switch-case-fall-through": true,
+        "no-this-assignment": [true, {"allowed-names": ["^self$"], "allow-destructuring": true}],
         "no-trailing-whitespace": true,
         "no-unexpected-multiline": true,
         "no-unnecessary-bind": true,
+        "no-unnecessary-class": true,
         "no-unnecessary-field-initialization": true,
         "no-unsafe-finally": true,
         "no-unused-expression": true,
-        "no-unused-new": true,
         "no-unused-variable": [true, "react", {
-            "ignore-pattern": "^((_)|(ReactD?O?M?))"
+            "ignore-pattern": "^((_)|(React))"
         }],
         "no-use-before-declare": true,
         "no-var-keyword": true,
         "no-var-requires": false,
-        "no-var-self": true,
+        "no-var-self": false,
         "no-with-statement": true,
         "object-literal-shorthand": true,
         "object-literal-sort-keys": false,
@@ -99,13 +127,22 @@
         "one-variable-per-declaration": true,
         "only-arrow-functions": [false, "allow-declarations", "allow-named-functions"],
         "ordered-imports": false,
-        "prefer-array-literal": true,
         "prefer-const": true,
-        "prefer-literal": [true, "object", "array", "function"],
+        "prefer-literal": [true, "object", "function"],
         "promise-must-complete": true,
         "quotemark": [false, "single", "avoid-escape"],
-        "semicolon": [true, "ignore-interfaces"],
-        "trailing-comma": [true, {"multiline": "always", "singleline": "ignore"}],
+        "radix": false,
+        "semicolon": [true, "ignore-interfaces", "ignore-bound-class-methods"],
+        "trailing-comma": [true, {
+            "multiline": {
+                "objects": "always",
+                "arrays": "always",
+                "functions": "ignore",
+                "typeLiterals": "always"
+            },
+            "singleline": "ignore",
+            "esSpecCompliant": true
+        }],
         "triple-equals": [true, "allow-null-check"],
         "typedef-whitespace": [
             true, {
@@ -116,8 +153,7 @@
                 "variable-declaration": "nospace"
             }
         ],
-        "typeof-compare": true,
-        "unified-signatures": true,
+        "unified-signatures": false,
         "use-isnan": true,
         "valid-typeof": true,
         "variable-name": [
