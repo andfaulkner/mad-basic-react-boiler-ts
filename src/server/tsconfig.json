@@ -1,0 +1,47 @@
+{
+    "version": "2.6.2",
+
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+
+        "target": "es5",
+        "outDir": "../../build/server",
+        "jsx": "react",
+
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+
+        "removeComments": false,
+        "preserveConstEnums": false,
+
+        "sourceMap": true,
+        "allowJs": true,
+        "pretty": true,
+
+        "noImplicitAny": false,
+        "skipLibCheck": true,
+        "strictNullChecks": false,
+
+        "lib": ["es6", "ES2015", "ES2015.Promise"],
+        "typeRoots": [
+            "../../typings",
+            "../../node_modules/@types"
+        ],
+        "types": []
+    },
+
+    "include": [
+        "./**/*.ts",
+        "./**/*.tsx",
+        "../../typings/index.d.ts",
+        "../../node_modules/@types/**/*.d.ts",
+        "../../node_modules/**/*.d.ts"
+    ],
+
+    "exclude": [
+        "*.js",
+        "*.json"
+    ]
+}
