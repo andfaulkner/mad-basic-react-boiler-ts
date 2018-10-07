@@ -10,7 +10,7 @@
   "scripts": {
     "start": "npm run build-all; node ./build/server/server.js",
     "build-all": "npm run build-client; npm run build-server",
-    "build-client": "webpack --config ./config/webpack.config.js; cp ./app/client/index.html ./build/client/index.html",
+    "build-client": "TS_NODE_PROJECT=\"./tsconfig.json\" webpack --config ./config/webpack.config.ts; cp ./app/client/index.html ./build/client/index.html",
     "build-server": "tsc -p ./app/server/tsconfig.json",
     "run": "node ./build/server/server.js",
     "watch-run": "nodemon --watch ./build/server --exec 'node ./build/server/server-root.js'",
