@@ -1,7 +1,7 @@
 {
   "name": "mad-react-boiler",
   "version": "1.0.0",
-  "description": "Ultra-light starter for kicking off learning projects using React & Typescript",
+  "description": "Light starter for kicking off learning projects using React & Typescript",
   "main": "index.js",
   "repository": "https://github.com/andfaulkner/mad-basic-react-boiler-ts",
   "author": "Andrew Faulkner <andfaulkner@gmail.com>",
