@@ -13,6 +13,7 @@
     "build-client": "TS_NODE_PROJECT=\"./tsconfig.json\" webpack --config ./config/webpack.config.ts; cp ./app/client/index.html ./build/client/index.html",
     "build-server": "tsc -p ./app/server/tsconfig.json",
     "run": "node ./build/server/server.js",
+    "test": "jest",
     "watch-run": "nodemon --watch ./build/server --exec 'node ./build/server/server-root.js'",
     "watch-client": "nodemon --watch ./app/client --ext ts,tsx,json,css,scss --exec 'npm run build-client'",
     "watch-server": "nodemon --watch ./app/server --ext ts,tsx,json --exec 'npm run build-server'",
