@@ -1,4 +1,6 @@
 /**************************************** PROJECT MODULES *****************************************/
+import {isProduction} from 'env-var-helpers';
+
 // Reference to root path of project
 import {path as rootPath} from 'app-root-path';
 
@@ -17,9 +19,8 @@ const log = logFactory(`server-root.ts`, Styles.potOfGold);
 // Ensure infinite number of concurrent sockets can be open
 http.globalAgent.maxSockets = Infinity;
 
-// Error handling
-if (process.env.NODE_ENV !== `production`) {
-
+// Development error handling
+if (!isProduction) {
     // Activate long stack trace
     Error.stackTraceLimit = Infinity;
     require(`trace`);
@@ -28,22 +29,29 @@ if (process.env.NODE_ENV !== `production`) {
     require(`clarify`);
 }
 
-// Port to host server at ("http://localhost:8081")
-const port = 8081;
+/**
+ * Port to host server on e.g. locally this puts server at http://localhost:8080
+ */
+const port = 8080;
 
 /********************************************* SERVER *********************************************/
 /**
- * Build Express app itself
+ * Build and run Express app itself
  */
-const app = express()
-
+express()
     // Middlewares
+    // .use(something)
+
+    // Routes
+    // .get('aa', (req, res) => {
+    //     res.send('response here');
+    // });
+
+    // Host static files
     .use(`/`, express.static(path.join(rootPath, `/build/client`)))
 
     // Serve
     .listen(port, logServerStartSuccess);
-
-log.verbose(app);
 
 /**
  * Runs on server start
