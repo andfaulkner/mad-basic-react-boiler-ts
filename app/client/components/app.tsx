@@ -1,6 +1,8 @@
+const s = require('./app.tsx');
+
 /************************************** THIRD-PARTY MODULES ***************************************/
 import React from 'react';
-// import * as cn from 'classnames';
+import cn from 'classnames';
 
 /************************************** INTERACTION WITH DOM **************************************/
 /**
@@ -19,7 +21,7 @@ interface AppState {}
 export class App extends React.Component<AppProps, AppState> {
     render() {
         return (
-            <span>Test component!</span>
+            <span className={cn(s[`test-style`])}>Test component!</span>
         );
     }
 }
