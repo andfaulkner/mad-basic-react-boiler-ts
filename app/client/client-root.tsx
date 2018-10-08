@@ -1,7 +1,6 @@
 /************************************** THIRD-PARTY MODULES ***************************************/
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import * as cn from 'classnames';
 
 import {App} from './components/app';
 
@@ -9,7 +8,4 @@ import {App} from './components/app';
 /**
  * Render root component
  */
-ReactDOM.render(
-    <App/>,
-    document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById(`root`));
