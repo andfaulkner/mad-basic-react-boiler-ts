@@ -25,7 +25,6 @@ const config: webpack.Configuration = {
             {
                 test: /\.tsx?$/,
                 loaders: `awesome-typescript-loader`,
-                // include: path.join(rootPath, `build`),
             },
         ],
     },
