@@ -3,6 +3,8 @@ import path from 'path';
 import {path as rootPath} from 'app-root-path';
 import {isProduction} from 'env-var-helpers';
 
+import Fiber from 'fibers';
+
 const config: webpack.Configuration = {
     entry: path.join(rootPath, `app/client/client-root.tsx`),
 
@@ -24,7 +26,31 @@ const config: webpack.Configuration = {
         rules: [
             {
                 test: /\.tsx?$/,
-                loaders: `awesome-typescript-loader`,
+                use: `awesome-typescript-loader`,
+            },
+            {
+                test: /\.s?css?$/,
+                use: [
+                    {
+                        loader: `style-loader`,
+                    },
+                    {
+                        loader: `css-loader`,
+                        options: {
+                            modules: true,
+                            localIdentName: `[path][name]__[local]--[hash:base64:5]`,
+                            sourceMap: true,
+                        },
+                    },
+                    {
+                        loader: `sass-loader`,
+                        options: {
+                            implementation: require(`dart-sass`),
+                            fiber: Fiber,
+                            sourceMap: true,
+                        },
+                    },
+                ],
             },
         ],
     },
