@@ -6,8 +6,8 @@ module.exports = {
     testRegex: `(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$`,
     moduleFileExtensions: [`ts`, `tsx`, `js`, `jsx`, `json`, `node`],
     snapshotSerializers: [`enzyme-to-json/serializer`],
-    setupTestFrameworkScriptFile: `<rootDir>/config/setup-enzyme.ts`,
+    setupTestFrameworkScriptFile: `<rootDir>/config/testing/setup-enzyme.ts`,
     moduleNameMapper: {
-        '\\.(css|less)$': 'identity-obj-proxy'
+        '\\.(css|less)$': `identity-obj-proxy`
     }
 };
