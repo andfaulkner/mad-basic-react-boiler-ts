@@ -20,8 +20,6 @@ interface AppState {}
  */
 export class App extends React.Component<AppProps, AppState> {
     render() {
-        return (
-            <span className={cn(s[`test-style`])}>Test component!</span>
-        );
+        return <span className={cn(s[`test-style`])}>Test component!</span>;
     }
 }
