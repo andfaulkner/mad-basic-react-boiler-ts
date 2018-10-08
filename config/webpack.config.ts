@@ -3,8 +3,6 @@ import path from 'path';
 import {path as rootPath} from 'app-root-path';
 import {isProduction} from 'env-var-helpers';
 
-// const path = require('path');
-
 const config: webpack.Configuration = {
     entry: path.join(rootPath, `app/client/client-root.tsx`),
 
@@ -19,7 +17,7 @@ const config: webpack.Configuration = {
 
     resolve: {
         extensions: [`.ts`, `.tsx`, `.js`, `.jsx`],
-        modules: [path.join(rootPath, `/app`), `node_modules`]
+        modules: [path.join(rootPath, `/app`), `node_modules`],
     },
 
     module: {
