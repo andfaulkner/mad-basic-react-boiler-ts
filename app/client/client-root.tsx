@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 /********************************************* SETUP **********************************************/
-import './styles/global-styles.scss';
+import './setup/setup';
 
 /**************************************** PROJECT MODULES *****************************************/
 import {App} from './components/app';
