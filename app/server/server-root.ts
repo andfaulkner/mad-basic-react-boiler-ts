@@ -32,7 +32,7 @@ if (!isProduction) {
 /**
  * Port to host server on e.g. locally this puts server at http://localhost:8080
  */
-const port = 8080;
+const port = 8082;
 
 /********************************************* SERVER *********************************************/
 /**
