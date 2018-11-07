@@ -17,10 +17,14 @@ const log = logFactory(`example.ts`, Styles.grasslands);
 interface ExampleProps extends StoreProps {}
 
 /********************************************* EXPORT *********************************************/
+/**
+ * Example component
+ */
 @inject('appState')
 @observer
 export class Example extends React.Component<ExampleProps> {
     render() {
+        log.info(`[RENDER] Rendered Example component with props:`, this.props);
         return (
             <span className={cn(s[`test-style`])}>Example component!</span>
         );
