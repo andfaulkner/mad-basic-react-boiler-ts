@@ -22,6 +22,8 @@ const config: webpack.Configuration = {
         modules: [path.join(rootPath, `/app`), `node_modules`],
     },
 
+    devtool: `cheap-module-source-map`,
+
     module: {
         rules: [
             {
