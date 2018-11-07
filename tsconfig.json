@@ -38,6 +38,9 @@
     "include": [
         "./app/**/*.ts",
         "./app/**/*.tsx",
+        "./shared/*.ts",
+        "./shared/**/*.ts",
+        "./shared/**/*.tsx",
         "./script/*.ts",
         "./script/**/*.ts",
         "./config/**/*.ts",
