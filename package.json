@@ -28,6 +28,7 @@
     "lodash": "^4.17.11",
     "mad-logs": "^11.0.0",
     "mad-utils": "^0.83.0",
+    "moment": "^2.22.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "trace": "^3.1.0"
@@ -38,6 +39,7 @@
     "@types/express": "^4.16.0",
     "@types/jest": "^23.3.9",
     "@types/lodash": "^4.14.116",
+    "@types/moment": "^2.13.0",
     "@types/node": "^10.12.2",
     "@types/react": "^16.4.15",
     "@types/react-dom": "^16.0.8",
