@@ -16,7 +16,7 @@
     "run": "node ./build/server/server.js",
     "test": "jest",
     "watch-run": "nodemon --watch ./build/server --exec 'node ./build/server/server-root.js'",
-    "watch-client": "nodemon --watch ./app/client --ext ts,tsx,json,css,scss --exec 'npm run build-client'",
+    "watch-client": "node --trace-warnings ./node_modules/.bin/webpack --config ./config/webpack.config.ts --watch",
     "watch-server": "nodemon --watch ./app/server --ext ts,tsx,json --exec 'npm run build-server'",
     "watch": "nodemon --watch ./app --ext ts,tsx,json,css,scss --exec 'npm run start'"
   },
