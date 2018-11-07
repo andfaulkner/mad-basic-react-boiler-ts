@@ -5,6 +5,10 @@ import '../styles/global-styles.scss';
 import {logFactory, Styles} from 'mad-logs/lib/shared';
 const log = logFactory(`setup.ts`, Styles.joy);
 
+/****************************************** MOBX CONFIG *******************************************/
+import {configure} from 'mobx';
+configure({enforceActions: `observed`});
+
 /********************************* ACTIVATE GLOBAL TYPE OVERRIDES *********************************/
 // Note: import is a dummy, but Typescript must get a value from a module to
 // apply the global values it declares
