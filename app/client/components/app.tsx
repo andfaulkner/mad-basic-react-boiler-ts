@@ -3,6 +3,11 @@ const s = require('./app.tsx');
 /************************************** THIRD-PARTY MODULES ***************************************/
 import React from 'react';
 import cn from 'classnames';
+import {Provider as MobXProvider} from 'mobx-react';
+
+import {RootStore} from '../store/root-store';
+
+const store = RootStore.new();
 
 /************************************** INTERACTION WITH DOM **************************************/
 /**
@@ -20,6 +25,10 @@ interface AppState {}
  */
 export class App extends React.Component<AppProps, AppState> {
     render() {
-        return <span className={cn(s[`test-style`])}>Test component!</span>;
+        return (
+            <MobXProvider appState={store}>
+                <span className={cn(s[`test-style`])}>Test component!</span>
+            </MobXProvider>
+        );
     }
 }
