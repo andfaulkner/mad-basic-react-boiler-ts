@@ -25,7 +25,7 @@
         "skipLibCheck": true,
         "strictNullChecks": false,
 
-        "lib": ["es6", "ES2015", "ES2015.Promise"],
+        "lib": ["ES2018"],
         "typeRoots": [
             "../../typings",
             "../../node_modules/@types"
