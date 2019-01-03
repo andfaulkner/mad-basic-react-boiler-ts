@@ -3,6 +3,7 @@ import path from 'path';
 import {path as rootPath} from 'app-root-path';
 import {isProduction} from 'env-var-helpers';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import Dotenv from 'dotenv-webpack';
 
 import Fiber from 'fibers';
 
@@ -78,8 +79,12 @@ const config: webpack.Configuration = {
              * Values to inject into template
              */
             vals: {
-                title: `Default title`,
-            }
+                title: `Default title!`,
+            },
+        }),
+        new Dotenv({
+            safe: true,
+            path: `./env/.env`,
         }),
     ],
 };
