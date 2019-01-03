@@ -79,6 +79,10 @@ declare global {
         init(): string;
 
         removeSurroundingQuotes(): string;
+        /**
+         * Remove all whitespace from a string
+         * Example: " Example  With Whitespace  " => "ExampleWithWhitespace"
+         */
         removeWhitespace(): string;
 
         isWhitespaceChar(): string;
