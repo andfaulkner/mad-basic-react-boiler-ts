@@ -2,8 +2,16 @@ import webpack from 'webpack';
 import path from 'path';
 import {path as rootPath} from 'app-root-path';
 import {isProduction} from 'env-var-helpers';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 import Fiber from 'fibers';
+
+import {copyFileSync} from 'fs';
+
+copyFileSync(
+    path.join(rootPath, `app/client/index.html`),
+    path.join(rootPath, `build/client/index.html`)
+);
 
 const config: webpack.Configuration = {
     entry: path.join(rootPath, `app/client/client-root.tsx`),
@@ -56,6 +64,24 @@ const config: webpack.Configuration = {
             },
         ],
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            /**
+             * Template file, relative to [ROOT]/app
+             */
+            template: `client/index.html`,
+            /**
+             * If true, minify output
+             */
+            minify: isProduction && null,
+            /**
+             * Values to inject into template
+             */
+            vals: {
+                title: `Default title`,
+            }
+        }),
+    ],
 };
 
 export default config;
