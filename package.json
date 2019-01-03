@@ -49,7 +49,7 @@
     "@types/react-test-renderer": "^16.0.3",
     "@types/webpack": "^4.4.22",
     "awesome-typescript-loader": "^5.2.1",
-    "css-loader": "^2.0.0",
+    "css-loader": "^2.1.0",
     "dart-sass": "^1.15.2",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
