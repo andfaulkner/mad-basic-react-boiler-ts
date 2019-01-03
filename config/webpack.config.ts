@@ -35,10 +35,13 @@ const config: webpack.Configuration = {
 
     module: {
         rules: [
+            // Handle loading TSX files
             {
                 test: /\.tsx?$/,
                 use: `awesome-typescript-loader`,
             },
+
+            // Handle loading SCSS files
             {
                 test: /\.s?css?$/,
                 use: [
@@ -65,7 +68,11 @@ const config: webpack.Configuration = {
             },
         ],
     },
+
     plugins: [
+        /**
+         * Automatically build an HTML file to display
+         */
         new HtmlWebpackPlugin({
             /**
              * Template file, relative to [ROOT]/app
@@ -82,6 +89,11 @@ const config: webpack.Configuration = {
                 title: `Default title!`,
             },
         }),
+
+        /**
+         * Load files in config/env/.env
+         * Fail if all variables in config/env/.env-example aren't set in .env
+         */
         new Dotenv({
             safe: true,
             path: `./env/.env`,
