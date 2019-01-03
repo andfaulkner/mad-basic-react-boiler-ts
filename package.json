@@ -27,7 +27,7 @@
     "express": "^4.16.4",
     "lodash": "^4.17.11",
     "mad-logs": "^11.2.0",
-    "mad-utils": "^0.88.1",
+    "mad-utils": "^0.89.1",
     "mobx": "^5.7.0",
     "mobx-react": "^5.4.3",
     "mobx-react-devtools": "^6.0.3",
