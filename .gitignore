@@ -64,6 +64,12 @@ temp/**
 .npm
 .npmrc
 
+# Output of 'npm pack'
+*.tgz
+
+# Optional eslint cache
+.eslintcache
+
 # Backups
 .bk
 
