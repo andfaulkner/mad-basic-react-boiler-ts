@@ -42,24 +42,6 @@ build/Release
 node_modules
 jspm_packages
 
-# IDE files
-*.sublime-workspace
-*.sublime-project
-.vscode
-
-# IDE - IntelliJ (User-specific stuff)
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
-
-# IDE history storage
-.history/**
-
-# vim swapfile
-*.swp
-
 # Anything with the _OLD file suffix
 **/doc/**_OLD/**
 **/*_OLD/
@@ -89,4 +71,23 @@ temp/**
 .node_history
 .node_repl_history
 repl-history
+
+
+######### IDE files ########## 
+*.sublime-workspace
+*.sublime-project
+.vscode
+
+# IDE - IntelliJ (User-specific stuff)
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# IDE history storage
+.history/**
+
+# vim swapfile
+*.swp
 
