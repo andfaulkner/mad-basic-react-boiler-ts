@@ -95,8 +95,8 @@ const config: webpack.Configuration = {
          * Fail if all variables in config/env/.env-example aren't set in .env
          */
         new Dotenv({
-            safe: true,
-            path: `./env/.env`,
+            safe: path.join(rootPath, `config/env/.env.example`) as any,
+            path: path.join(`./config/env/.env`),
         }),
     ],
 };
