@@ -76,7 +76,6 @@
         ],
         "no-mergeable-namespace": false,
         "no-octal-literal": true,
-        "no-param-reassign": true,
         "no-reference": false,
         "no-regex-spaces": true,
         "no-shadowed-variable": [
@@ -106,9 +105,6 @@
         "no-unnecessary-field-initialization": true,
         "no-unsafe-finally": true,
         "no-unused-expression": true,
-        "no-unused-variable": [true, "react", {
-            "ignore-pattern": "^((_)|(React))"
-        }],
         "no-use-before-declare": true,
         "no-var-keyword": true,
         "no-var-requires": false,
