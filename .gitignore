@@ -78,6 +78,9 @@ temp/**
 .node_repl_history
 repl-history
 
+# DynamoDB Local files
+.dynamodb/
+
 
 ######### IDE files ########## 
 *.sublime-workspace
