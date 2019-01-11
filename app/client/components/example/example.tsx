@@ -25,8 +25,6 @@ interface ExampleProps extends StoreProps {}
 export class Example extends React.Component<ExampleProps> {
     render() {
         log.info(`[RENDER] Rendered Example component with props:`, this.props);
-        return (
-            <span className={cn(s[`test-style`])}>Example component!</span>
-        );
+        return <span className={cn(s[`test-style`])}>Example component!</span>;
     }
-};
+}

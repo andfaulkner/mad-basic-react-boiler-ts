@@ -27,9 +27,9 @@ export class RootStore {
             log.info(`RootStore created: `, RootStore.Instance);
         }
         return RootStore.Instance;
-    }
+    };
 
     private constructor() {}
 }
 
-export {RootStore as Store}
+export {RootStore as Store};
