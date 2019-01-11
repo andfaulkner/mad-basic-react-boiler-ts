@@ -83,7 +83,7 @@ repl-history
 
 
 ######### Python ########## 
-# Byte-compiled / optimized / DLL files
+# Python byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -94,9 +94,22 @@ __pycache__/
 *.manifest
 *.spec
 
-# Installer logs
+# Python installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+
+# Python unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
 
 
 ######### IDE files ########## 
