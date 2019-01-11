@@ -140,15 +140,22 @@ dmypy.json
 
 
 ######### IDE files ########## 
+# Sublime
 *.sublime-workspace
 *.sublime-project
-.vscode
 
-# vim swapfile
-*.swp
+# Visual Studio Code (VSCode)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # IDE history storage
 .history/**
+
+# vim swapfile
+*.swp
 
 # IDE - IntelliJ - User-specific stuff
 .idea/**/workspace.xml
