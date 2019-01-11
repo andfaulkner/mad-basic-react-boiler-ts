@@ -110,6 +110,33 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
+# Python - Flask
+instance/
+.webassets-cache
+
+# Python - PyBuilder
+target/
+
+# Python - Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Python - Pyre type checker
+.pyre/
+
+# Python virtualenv
+.venv/
 
 
 ######### IDE files ########## 
