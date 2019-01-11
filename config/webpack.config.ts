@@ -83,8 +83,8 @@ const config: webpack.Configuration = {
             },
         }),
         new Dotenv({
-            safe: true,
-            path: `./env/.env`,
+            safe: path.join(rootPath, `config/env/.env.example`) as any,
+            path: path.join(`./config/env/.env`),
         }),
     ],
 };
