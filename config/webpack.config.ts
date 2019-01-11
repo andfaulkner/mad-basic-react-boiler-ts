@@ -66,6 +66,12 @@ const config: webpack.Configuration = {
                     },
                 ],
             },
+
+            // Handle image and font files
+            {
+                test: /\.(jpe?g|(gif)|(png)|(ico)|(ttf)|(svg)|(woff)|(bmp)|(tiff)|(eot))$/,
+                use: ['file-loader'],
+            },
         ],
     },
 
