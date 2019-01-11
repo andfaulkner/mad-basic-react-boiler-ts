@@ -1,4 +1,9 @@
+# MacOS temp files & dirs
 .DS_Store
+.Trashes
+.Spotlight-V100
+
+# Redis dump
 dump.rdb
 
 # Local environment variables
