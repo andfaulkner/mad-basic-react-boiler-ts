@@ -14,6 +14,7 @@
     "build-server": "tsc -p ./app/server/tsconfig.json",
     "prettier": "prettier --config .prettierrc --write \"./@(app|config|script|shared|spec|test|typings)/**/*.@(js|jsx|ts|tsx)\"",
     "run": "node ./build/server/server.js",
+    "setup": "script/setup.sh",
     "test": "jest",
     "watch-run": "nodemon --watch ./build/server --exec 'node ./build/server/server-root.js'",
     "watch-client": "node --trace-warnings ./node_modules/.bin/webpack --config ./config/webpack.config.ts --watch",
