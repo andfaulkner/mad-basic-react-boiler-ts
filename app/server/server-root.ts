@@ -39,18 +39,19 @@ const port = 8082;
  * Build and run Express app itself
  */
 express()
-    // Middlewares
+    /****** Middlewares ******/
     // .use(something)
 
-    // Routes
-    // .get('aa', (req, res) => {
-    //     res.send('response here');
-    // });
+    /****** Routes ******/
+    // Return index.html at any route with no "." in it
+    .get('^/[^\.]+$', (req: express.Request, res: express.Response) => {
+        res.sendFile(path.join(rootPath, `./build/client/index.html`));
+    })
 
-    // Host static files
+    // Host static files - JS & CSS
     .use(`/`, express.static(path.join(rootPath, `/build/client`)))
 
-    // Serve
+    /****** Serve ******/
     .listen(port, logServerStartSuccess);
 
 /**
