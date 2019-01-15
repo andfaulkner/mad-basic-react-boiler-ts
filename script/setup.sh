@@ -9,9 +9,8 @@ mkdir ./build/server 2>/dev/null
 npm install
 
 # Handle environment variables (partially)
-echo "\n"
+echo ""
 echo "WARNING: modify values in ./config/env/.env to contain a value for each value in .env.example"
-echo "\n"
 cp ./config/env/.env.example ./config/env/.env 2>/dev/null
 echo "Current content of ./config/env/.env:"
 cat ./config/env/.env
