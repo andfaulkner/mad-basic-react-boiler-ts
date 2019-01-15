@@ -12,6 +12,7 @@
     "build-all": "npm run build-client; npm run build-server",
     "build-client": "TS_NODE_PROJECT=\"./tsconfig.json\" webpack --config ./config/webpack.config.ts; cp ./app/client/index.html ./build/client/index.html",
     "build-server": "tsc -p ./app/server/tsconfig.json",
+    "clean": "./script/clean.sh",
     "prettier": "prettier --config .prettierrc --write \"./@(app|config|script|shared|spec|test|typings)/**/*.@(js|jsx|ts|tsx)\"",
     "run": "node ./build/server/server.js",
     "setup": "script/setup.sh",

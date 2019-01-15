@@ -12,9 +12,11 @@ npm install
 echo "\n"
 echo "WARNING: modify values in ./config/env/.env to contain a value for each value in .env.example"
 echo "\n"
-cp ./config/env/.env.example ./config/env/.env
+cp ./config/env/.env.example ./config/env/.env 2>/dev/null
 echo "Current content of ./config/env/.env:"
 cat ./config/env/.env
 
-# First build
+# Perform first build
 npm run build-all
+
+echo "Setup complete!"
