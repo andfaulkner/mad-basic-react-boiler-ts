@@ -51,7 +51,8 @@ jspm_packages
 doc/old_code
 
 # Local notes (e.g. TODO lists)
-doc/local_notes
+doc/local_notes/
+doc/local_todos/
 
 ## Temporary files & folders ##
 temp/
@@ -59,6 +60,7 @@ temp/**
 !/*/**/*temp*
 **/cache/**
 .awcache
+.cache-loader
 
 # Optional npm cache directories
 .npm
@@ -82,7 +84,7 @@ repl-history
 .dynamodb/
 
 
-######### Python ########## 
+######### Python ##########
 # Python byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -139,7 +141,7 @@ dmypy.json
 .venv/
 
 
-######### IDE files ########## 
+######### IDE files ##########
 # Sublime
 *.sublime-workspace
 *.sublime-project
@@ -175,4 +177,3 @@ dmypy.json
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
-
