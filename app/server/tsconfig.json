@@ -36,9 +36,7 @@
     "include": [
         "./**/*.ts",
         "./**/*.tsx",
-        "../../typings/project-typings.d.ts",
-        "../../node_modules/@types/**/*.d.ts",
-        "../../node_modules/**/*.d.ts"
+        "../../typings/project-typings.d.ts"
     ],
 
     "exclude": [
