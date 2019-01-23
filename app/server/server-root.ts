@@ -30,7 +30,7 @@ if (!isProduction) {
 }
 
 /**
- * Port to host server on e.g. locally this puts server at http://localhost:8080
+ * Port to host server on e.g. locally this puts server at http://localhost:8082
  */
 const port = 8082;
 
