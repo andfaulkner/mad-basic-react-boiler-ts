@@ -1,0 +1,48 @@
+{
+    "version": "3.2.2",
+
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+
+        "target": "es5",
+        "outDir": "../../build/client",
+        "jsx": "react",
+
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+
+        "removeComments": false,
+        "preserveConstEnums": false,
+
+        "sourceMap": true,
+        "allowJs": true,
+        "pretty": true,
+
+        "noImplicitAny": false,
+        "skipLibCheck": true,
+        "strictNullChecks": false,
+
+        "lib": ["ES2018", "DOM"],
+        "typeRoots": [
+            "../../typings",
+            "../../node_modules/@types"
+        ],
+        "types": []
+    },
+
+    "include": [
+        "./**/*.ts",
+        "./**/*.tsx",
+        "../../shared/**/*.ts",
+        "../../shared/**/*.tsx",
+        "../../typings/project-typings.d.ts"
+    ],
+
+    "exclude": [
+        "*.js",
+        "*.json"
+    ]
+}

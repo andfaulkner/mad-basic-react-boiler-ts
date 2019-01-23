@@ -63,6 +63,7 @@ const config: webpack.Configuration = {
                     {
                         loader: `awesome-typescript-loader`,
                         options: {
+                            configFileName: path.join(rootPath, `/app/client/tsconfig.json`),
                             useCache: true,
                             reportFiles: [
                                 'app/**/*.{ts,tsx}',
