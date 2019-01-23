@@ -38,7 +38,19 @@ const config: webpack.Configuration = {
             // Handle loading TSX files
             {
                 test: /\.tsx?$/,
-                use: `awesome-typescript-loader`,
+                use: [
+                    {
+                        loader: `awesome-typescript-loader`,
+                        options: {
+                            useCache: true,
+                            reportFiles: [
+                                'app/**/*.{ts,tsx}',
+                                'shared/**/*.{ts,tsx}',
+                                'config/**/*.{ts,tsx}',
+                            ],
+                        },
+                    },
+                ],
             },
 
             // Handle loading SCSS files
