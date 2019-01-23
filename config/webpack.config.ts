@@ -1,8 +1,11 @@
+/************************************** THIRD-PARTY MODULES ***************************************/
 import webpack from 'webpack';
 import path from 'path';
 import {path as rootPath} from 'app-root-path';
 import {isDevelopment, isProduction} from 'env-var-helpers';
+
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import {CheckerPlugin} from 'awesome-typescript-loader';
 import Dotenv from 'dotenv-webpack';
 
 import Fiber from 'fibers';
@@ -102,6 +105,11 @@ const config: webpack.Configuration = {
     },
 
     plugins: [
+        /**
+         * Check for Typescript errors
+         */
+        new CheckerPlugin(),
+
         /**
          * Automatically build an HTML file to display
          */
