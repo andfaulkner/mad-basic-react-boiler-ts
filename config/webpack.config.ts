@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import path from 'path';
 import {path as rootPath} from 'app-root-path';
-import {isProduction} from 'env-var-helpers';
+import {isDevelopment, isProduction} from 'env-var-helpers';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 
@@ -14,6 +14,24 @@ copyFileSync(
     path.join(rootPath, `build/client/index.html`)
 );
 
+/************************************ REUSABLE CONFIG SECTIONS ************************************/
+const cssLoaders = [
+    {
+        loader: `style-loader`,
+    },
+    {
+        loader: `css-loader`,
+        options: {
+            modules: true,
+            localIdentName: isDevelopment
+                ? `[path][name]__[local]`
+                : `[path][name]__[local]--[hash:base64:5]`,
+            sourceMap: true,
+        },
+    },
+];
+
+/***************************************** CONFIG EXPORT ******************************************/
 const config: webpack.Configuration = {
     entry: path.join(rootPath, `app/client/client-root.tsx`),
 
@@ -53,27 +71,23 @@ const config: webpack.Configuration = {
                 ],
             },
 
+            // Handle loading CSS files
+            {
+                test: /\.css?$/,
+                use: cssLoaders,
+            },
+
             // Handle loading SCSS files
             {
-                test: /\.s?css?$/,
+                test: /\.scss?$/,
                 use: [
-                    {
-                        loader: `style-loader`,
-                    },
-                    {
-                        loader: `css-loader`,
-                        options: {
-                            modules: true,
-                            localIdentName: `[path][name]__[local]--[hash:base64:5]`,
-                            sourceMap: true,
-                        },
-                    },
+                    ...cssLoaders,
                     {
                         loader: `sass-loader`,
                         options: {
                             implementation: require(`dart-sass`),
                             fiber: Fiber,
-                            sourceMap: true,
+                            sourceMap: isDevelopment,
                         },
                     },
                 ],
